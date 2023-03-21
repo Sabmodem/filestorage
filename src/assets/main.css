@@ -1,0 +1,13 @@
+@import "./bootstrap/css/bootstrap.css";
+@import "./bootstrap-icons/bootstrap-icons.css";
+@import "../../node_modules/dropzone/dist/dropzone.css";
+
+.upload-window {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  width: 30vw;
+  height: 10vh;
+  /* font-size: 40px; */
+  cursor: pointer;
+}
