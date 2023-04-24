@@ -78,9 +78,7 @@ export default {
       uploadMultiple: true,
       createImageThumbnails: false
     });
-    dz.on("totaluploadprogress", (progress) => {
-      this.uploadProgress = progress.toFixed();
-    });
+    dz.on("totaluploadprogress", (progress) => this.uploadProgress = progress.toFixed());
     dz.on("success", async (file) => await this.getFilesList());
   }
 }

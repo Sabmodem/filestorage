@@ -24,6 +24,10 @@ def default_error():
 def default_route():
     return render_template("index.html")
 
+@app.post('/files/xyu')
+async def xyu():
+    return jsonify({'xyu': 'xyu', 'abc':'abc'})
+
 @app.get('/files')
 async def get_files():
     return jsonify([{ 'path': f'{conf.files_url}{i}', 'filename': i } for i in os.listdir(conf.files_dir)])
@@ -33,7 +37,7 @@ async def upload_file():
     for key, f in request.files.items():
         if key.startswith('file'):
             f.save(os.path.join(conf.files_dir, f.filename))
-    return default_route()
+    return default_response()
 
 
 @app.get('/files/<filename>')
